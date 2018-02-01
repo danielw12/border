@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+.view {
+    width: 408px;
+    background-color: black;
+    opacity: 1;
+    height: 100px;
+    margin-left: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    opacity: 0;
+    transition-duration: 2s;
+    z-index: 10;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.box {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background-image: url(img/4-jezioro.jpg);
+    box-sizing: border-box;
+    transition: .5s;
+    margin: 0 auto;
+    
+    
+}
+
+
+
+.box:before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    top: -4px;
+    left: -4px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    opacity: 0;
+    transition: .5s;
+    box-sizing: border-box;
+}
+
+.box:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    bottom: -4px;
+    right: -4px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    opacity: 0;
+    transition: .5s;
+    box-sizing: border-box;
+}
+
+.box:hover:before {
+    width: 408px;
+    height: 308px;
+    opacity: 1;
+}
+
+.box:hover:after {
+    width: 408px;
+    height: 308px;
+    opacity: 1;
+}
+
+.box:hover > .view {
+    opacity: 0.8;
+}
